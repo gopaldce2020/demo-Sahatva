@@ -773,7 +773,7 @@
 }
 
 .team .team-item:hover .team-img::before {
-    background: #F49EAA;
+    background: #f49eaa36;
 }
 
 .team .team-item .team-content {
