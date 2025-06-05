@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Support Groups - Sahatva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    .support-hero {
+      background-color: #003a36;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .highlight {
+      color: #A8E6CF;
+      font-weight: bold;
+    }
+    .section-title {
+      color: #003a36;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    .support-section {
+      padding: 60px 0;
+    }
+    .support-section:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    .accordion-button {
+      background-color: #e0f2f1;
+      color: #003a36;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #b2dfdb;
+      color: #003a36;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="support-hero" data-aos="fade-down">
+    <div class="container">
+      <h1 class="display-4">Support <span class="highlight">Groups</span></h1>
+      <p class="lead mt-3">Find healing, connection, and community in a safe, stigma-free space curated by Sahatva.</p>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="support-section">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center">What Are Support Groups?</h2>
+      <p class="lead text-center">
+        Support groups are safe spaces where you meet people who <strong>‘get’</strong> you. They understand and resonate with your feelings, offering acknowledgement, empathy and insight. Together you build a community where you support each other, share experiences to collectively garner insight and help each other tackle the various challenges of life.
+      </p>
+    </div>
+  </section>
+
+  <!-- Accordion Section -->
+  <section class="support-section">
+    <div class="container">
+      <div class="accordion" id="supportGroupsAccordion">
+
+        <!-- What happens in a session -->
+        <div class="accordion-item mb-3" data-aos="fade-right">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What happens at Sahatva group sessions?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#supportGroupsAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>People with similar struggles join along with a certified facilitator in a group setting.</li>
+                <li>Everyone is encouraged to share, however, there is no pressure. You may share your story or just listen to others if you prefer.</li>
+                <li>Participants talk about their experiences, struggles, thoughts, and feelings.</li>
+                <li><strong>Guided Conversations:</strong> The facilitator introduces various themes or topics to guide and maintain the flow, while discussions may also flow naturally.</li>
+                <li>The facilitator acts as a moderator and guide.</li>
+                <li>Some sessions include practical tools, coping strategies, and mindfulness exercises to help manage emotions and stress.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits of Support Groups -->
+        <div class="accordion-item mb-3" data-aos="fade-left">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              What am I going to get out of this?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#supportGroupsAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li><strong>Emotional Support:</strong> A safe space to share without judgment.</li>
+                <li>Meet people who truly understand your challenges.</li>
+                <li>It helps lighten your emotional burden.</li>
+                <li>Learn from others' experiences and coping strategies.</li>
+                <li><strong>Sense of Community:</strong> Feel that you are not alone in your struggles.</li>
+                <li><strong>Healing & Growth:</strong> Through connection and shared lived experiences, you’ll gain clarity and strength.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Message -->
+  <section class="support-section text-center" data-aos="zoom-in">
+    <div class="container">
+      <h2 class="section-title">Join A Circle, Begin Your Healing</h2>
+      <p class="lead">
+        Discover a safe space where you are <strong>Seen, Heard, and Supported</strong>. Sahatva Support Groups are here to walk with you — every step of the way.
+      </p>
+      <a href="join.html" class="btn btn-success mt-3">Join a Group Now</a>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

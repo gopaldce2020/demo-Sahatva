@@ -1,47 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Sahatva  - Physical Therapy Website</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Sahatva - Physical Therapy Website</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    <body>
+    <style>
+        .team-item {
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+        .team-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px rgba(0, 58, 54, 0.3);
+        }
+
+        .team-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            transition: transform 0.5s ease;
+        }
+
+        .team-item:hover .team-img img {
+            transform: scale(1.05);
+        }
+
+        .team-icon {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .team-item:hover .team-icon {
+            opacity: 1;
+        }
+
+        .btn.btn-square {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn.btn-square:hover {
+            background-color: #003a36;
+            transform: scale(1.1);
+        }
+
+        .team-content {
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .team-item:hover .team-content {
+            background-color: #e0f2f1;
+        }
+
+        .team-item:hover .team-content h5 {
+            color: #fff !important;
+        }
+
+        .custom-btn {
+            background-color: #ffffff;
+            /* White background */
+            color: #003a36;
+            /* Bootstrap's green */
+            border: 2px solid #003a36;
+            padding: 12px 30px;
+            border-radius: 8px;
+            /* Slightly curved */
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .custom-btn:hover {
+            background-color: #28a745;
+            /* Green bg on hover */
+            color: #ffffff;
+            /* White text */
+            text-decoration: none;
+        }
+
+        .custom-btn:active {
+            transform: scale(0.97);
+            background-color: #003a36;
+            /* Slightly darker green on click */
+            border-color: #003a36;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
 
-        <!-- Topbar Start -->
-        <!-- <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <!-- Topbar Start -->
+    <!-- <div class="container-fluid bg-dark px-5 d-none d-lg-block">
             <div class="row gx-0 align-items-center" style="height: 45px;">
                 <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div class="d-flex flex-wrap">
@@ -60,20 +163,20 @@
                 </div>
             </div>
         </div> -->
-        <!-- Topbar End -->
+    <!-- Topbar End -->
 
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Sahatva</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Sahatva</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
@@ -93,813 +196,835 @@
                     </div>
                     <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
                 </div> -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto py-0">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
 
-         <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
-            <div class="dropdown-menu m-0">
-                <a href="team.html" class="dropdown-item">Team</a>
-                <a href="careers.html" class="dropdown-item">Careers</a>
-                <a href="blog.html" class="dropdown-item">Blog</a>
-                <a href="faqs.html" class="dropdown-item">FAQs</a>
-            </div>
-        </div>
-
-        <!-- Support Groups Dropdown -->
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Support Groups</a>
-            <div class="dropdown-menu m-0">
-                <a href="all-support-groups.html" class="dropdown-item">All Support Groups</a>
-                <a href="upcoming-support-groups.html" class="dropdown-item">Upcoming Support Groups</a>
-            </div>
-        </div>
-
-        <!-- Therapy Dropdown -->
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Therapy</a>
-            <div class="dropdown-menu m-0">
-                <a href="therapy-individual.html" class="dropdown-item">Individual</a>
-                <a href="therapy-couple.html" class="dropdown-item">Couple</a>
-                <a href="therapy-family.html" class="dropdown-item">Family</a>
-                <a href="therapy-parent-child.html" class="dropdown-item">Parent & Child Therapy</a>
-            </div>
-        </div>
-
-        <!-- Psychological Assessment Dropdown -->
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Psychological Assessment</a>
-            <div class="dropdown-menu m-0">
-                <a href="assessment-depression.html" class="dropdown-item">Depression</a>
-                <a href="assessment-anxiety.html" class="dropdown-item">Anxiety</a>
-                <a href="assessment-ocd.html" class="dropdown-item">OCD</a>
-                <a href="assessment-personality.html" class="dropdown-item">Personality</a>
-                <a href="assessment-adhd.html" class="dropdown-item">ADHD</a>
-                <a href="assessment-conduct.html" class="dropdown-item">Conduct</a>
-                <a href="assessment-odd.html" class="dropdown-item">ODD</a>
-                <a href="assessment-neuropsych.html" class="dropdown-item">Neuropsychological Assessments</a>
-                <a href="assessment-aptitude.html" class="dropdown-item">Aptitude</a>
-                <a href="assessment-intellectual.html" class="dropdown-item">Intellectual Disability</a>
-                <a href="assessment-sld.html" class="dropdown-item">Specific Learning Disorder</a>
-                <a href="assessment-projective.html" class="dropdown-item">Projective Tests</a>
-            </div>
-        </div>
-         <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-
-    </div>
-
-    <!-- Optional CTA Button -->
-    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
-                </div>
-            </nav>
-
-
-            
-<div class="container-fluid bg-light d-flex align-items-center" style="min-height: 100vh;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <h1 class="display-4 text-dark mb-4">Best Solution For Painful Life</h1>
-                <p class="fs-5 text-muted">We provide expert therapy services to help you recover faster and live a pain-free life. Our modern techniques and experienced therapists ensure the best care for every patient.</p>
-                <a class="btn btn-primary rounded-pill text-white py-3 px-5 mt-3" href="#">Book Appointment</a>
-            </div>
-            <div class="col-lg-6 text-center">
-                <img src="img/home_page_image-removebg.png" alt="Infographic" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Header Section End -->
-
-            
-            <!-- Carousel End -->
-        </div>
-        <!-- Navbar & Hero End -->
-
-
-        <!-- Services Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">What We Do</h4>
-                    </div>
-                    <h1 class="display-3 mb-4">Our Service Given Physio Therapy By Expert.</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Message Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="team.html" class="dropdown-item">Team</a>
+                            <a href="careers.html" class="dropdown-item">Careers</a>
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="faqs.html" class="dropdown-item">FAQs</a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Physiotherapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
+
+                    <!-- Support Groups Dropdown -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Support Groups</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="all-support-groups.html" class="dropdown-item">All Support Groups</a>
+                            <a href="upcoming-support-groups.html" class="dropdown-item">Upcoming Support Groups</a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Heat & Cold Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
+
+                    <!-- Therapy Dropdown -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Therapy</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="therapy-individual.html" class="dropdown-item">Individual</a>
+                            <a href="therapy-couple.html" class="dropdown-item">Couple</a>
+                            <a href="therapy-family.html" class="dropdown-item">Family</a>
+                            <a href="therapy-parent-child.html" class="dropdown-item">Parent & Child Therapy</a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Chiropatic Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
+
+                    <!-- Psychological Assessment Dropdown -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Psychological
+                            Assessment</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="assessment-depression.html" class="dropdown-item">Depression</a>
+                            <a href="assessment-anxiety.html" class="dropdown-item">Anxiety</a>
+                            <a href="assessment-ocd.html" class="dropdown-item">OCD</a>
+                            <a href="assessment-personality.html" class="dropdown-item">Personality</a>
+                            <a href="assessment-adhd.html" class="dropdown-item">ADHD</a>
+                            <a href="assessment-conduct.html" class="dropdown-item">Conduct</a>
+                            <a href="assessment-odd.html" class="dropdown-item">ODD</a>
+                            <a href="assessment-neuropsych.html" class="dropdown-item">Neuropsychological
+                                Assessments</a>
+                            <a href="assessment-aptitude.html" class="dropdown-item">Aptitude</a>
+                            <a href="assessment-intellectual.html" class="dropdown-item">Intellectual Disability</a>
+                            <a href="assessment-sld.html" class="dropdown-item">Specific Learning Disorder</a>
+                            <a href="assessment-projective.html" class="dropdown-item">Projective Tests</a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Work Injuries</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Spot Injuries</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-7.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Regular Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-8.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Back Pain</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Services More</a>
-                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+
                 </div>
             </div>
-        </div>
-        <!-- Services End -->
+        </nav>
 
 
-        <!-- About Start -->
-        <div class="container-fluid about bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="about-img pb-5 ps-5">
-                            <img src="img/about-1.jpg" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
-                            <div class="about-img-inner">
-                                <img src="img/about-2.jpg" class="img-fluid rounded-circle w-100 h-100" alt="Image">
-                            </div>
-                            <div class="about-experience">15 years experience</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="section-title text-start mb-5">
-                            <h4 class="sub-title pe-3 mb-0">About Us</h4>
-                            <h1 class="display-3 mb-4">We are Ready to Help Improve Your Treatment.</h1>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                            <div class="mb-4">
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Refresing to get such a personal touch.</p>
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Duis aute irure dolor in reprehenderit in voluptate.</p>
-                                <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Discover More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
 
-        <!-- Feature Start -->
-        <div class="container-fluid feature py-5">
-            <div class="container py-5">
-                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">Why Choose Us</h4>
-                    </div>
-                    <h1 class="display-3 mb-4">Why Choose Us? Get Your Life Style Back</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-diagnoses fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Licensed Therapist</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-briefcase-medical fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Personalized Treatment</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-hospital-user fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Therapy Goals</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-users fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Practitioners Network</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-spa fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Comfortable Center</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-heart fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Experienced Stuff</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fab fa-pied-piper fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Therapy Goals</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="row-cols-1 feature-item p-4">
-                            <div class="col-12">
-                                <div class="feature-icon mb-4">
-                                    <div class="p-3 d-inline-flex bg-white rounded">
-                                        <i class="fas fa-user-md fa-4x text-primary"></i>
-                                    </div>
-                                </div>
-                                <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Licensed Therapist</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
-
-
-        <!-- Book Appointment Start -->
-        <div class="container-fluid appointment py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2">
-                        <div class="section-title text-start">
-                            <h4 class="sub-title pe-3 mb-0">Solutions To Your Pain</h4>
-                            <h1 class="display-4 mb-4">Best Quality Services With Minimal Pain Rate</h1>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                            <div class="row g-4">
-                                <div class="col-sm-6">
-                                    <div class="d-flex flex-column h-100">
-                                        <div class="mb-4">
-                                            <h5 class="mb-3"><i class="fa fa-check text-primary me-2"></i> Body Relaxation</h5>
-                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et deserunt qui cupiditate veritatis enim ducimus.</p>
-                                        </div>
-                                        <div class="mb-4">
-                                            <h5 class="mb-3"><i class="fa fa-check text-primary me-2"></i> Body Relaxation</h5>
-                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et deserunt qui cupiditate veritatis enim ducimus.</p>
-                                        </div>
-                                        <div class="text-start mb-4">
-                                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="video h-100">
-                                        <img src="img/video-img.jpg" class="img-fluid rounded w-100 h-100" style="object-fit: cover;" alt="">
-                                        <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                                            <span></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="appointment-form rounded p-5">
-                            <p class="fs-4 text-uppercase text-primary">Get In Touch</p>
-                            <h1 class="display-5 mb-4">Get Appointment</h1>
-                            <form>
-                                <div class="row gy-3 gx-4">
-                                    <div class="col-xl-6">
-                                        <input type="text" class="form-control py-3 border-primary bg-transparent text-white" placeholder="First Name">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input type="email" class="form-control py-3 border-primary bg-transparent text-white" placeholder="Email">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input type="phone" class="form-control py-3 border-primary bg-transparent" placeholder="Phone">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <select class="form-select py-3 border-primary bg-transparent" aria-label="Default select example">
-                                            <option selected>Your Gender</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">FeMale</option>
-                                            <option value="3">Others</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input type="date" class="form-control py-3 border-primary bg-transparent">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <select class="form-select py-3 border-primary bg-transparent" aria-label="Default select example">
-                                            <option selected>Department</option>
-                                            <option value="1">Physiotherapy</option>
-                                            <option value="2">Physical Helth</option>
-                                            <option value="2">Treatments</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="form-control border-primary bg-transparent text-white" name="text" id="area-text" cols="30" rows="5" placeholder="Write Comments"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="button" class="btn btn-primary text-white w-100 py-3 px-5">SUBMIT NOW</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Video -->
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Book Appointment End -->
-
-
-        <!-- Team Start -->
-        <div class="container-fluid team py-5">
-            <div class="container py-5">
-                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">Meet our team</h4>
-                    </div>
-                    <h1 class="display-3 mb-4">Physiotherapy Services from Professional Therapist</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>test 1 </h5>
-                                <p class="mb-0">Message Physio Therapist</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>test 2</h5>
-                                <p class="mb-0">Rehabilitation Therapist</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>Full Name</h5>
-                                <p class="mb-0">Doctor of Physical therapy</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>Full Name</h5>
-                                <p class="mb-0">Doctor of Physical therapy</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial py-5 wow zoomInDown" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="section-title mb-5">
-                    <div class="sub-style">
-                        <h4 class="sub-title text-white px-3 mb-0">Testimonial</h4>
-                    </div>
-                    <h1 class="display-3 mb-4">What Clients are Say</h1>
-                </div>
-                <div class="testimonial-carousel owl-carousel">
-                    <div class="testimonial-item">
-                        <div class="testimonial-inner p-5">
-                            <div class="testimonial-inner-img mb-4">
-                                <img src="img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <h5 class="mb-2">John Abraham</h5>
-                                <p class="mb-2 text-white-50">New York, USA</p>
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-inner p-5">
-                            <div class="testimonial-inner-img mb-4">
-                                <img src="img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <h5 class="mb-2">John Abraham</h5>
-                                <p class="mb-2 text-white-50">New York, USA</p>
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-inner p-5">
-                            <div class="testimonial-inner-img mb-4">
-                                <img src="img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <h5 class="mb-2">John Abraham</h5>
-                                <p class="mb-2 text-white-50">New York, USA</p>
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
-
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">Our Blog</h4>
-                    </div>
-                    <h1 class="display-3 mb-4">Excellent Facility and High Quality Therapy</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-item rounded">
-                            <div class="blog-img">
-                                <img src="img/blog-1.jpg" class="img-fluid w-100" alt="Image">
-                            </div>
-                            <div class="blog-centent p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045</p>
-                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3 Comments</a>
-                                </div>
-                                <a href="#" class="h4">Remove back Pain While Working on o physio</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="blog-item rounded">
-                            <div class="blog-img">
-                                <img src="img/blog-2.jpg" class="img-fluid w-100" alt="Image">
-                            </div>
-                            <div class="blog-centent p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045</p>
-                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3 Comments</a>
-                                </div>
-                                <a href="#" class="h4">Benefits of a weekly physiotherapy session</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="blog-item rounded">
-                            <div class="blog-img">
-                                <img src="img/blog-3.jpg" class="img-fluid w-100" alt="Image">
-                            </div>
-                            <div class="blog-centent p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045</p>
-                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3 Comments</a>
-                                </div>
-                                <a href="#" class="h4">Regular excercise can slow ageing process</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
-
-
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem dolores laudantium quia, qui similique
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Quick Links</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Terapia Services</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
+        <div class="container-fluid  d-flex align-items-center" style="min-height: 100vh; background-color: #003a36;">
             <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h1 class="display-4 text-white mb-4">Best Solution For Painful Life</h1>
+                        <p class="fs-5" style="color: #dbdbdb;">We provide expert therapy services to help you recover
+                            faster and
+                            live a pain-free life. Our modern techniques and experienced therapists ensure the best care
+                            for every patient.</p>
+                        <a class="custom-btn" href="#">Book Appointment</a>
                     </div>
-                    <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_puciaact.json"
+                        background="transparent" speed="1"   style="width: 500px; height: 500px; margin-left: 50px; "   loop autoplay>
+                    </lottie-player>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Section End -->
+
+
+        <!-- Carousel End -->
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- Services Start -->
+    <!-- <div class="container-fluid service py-5">
+        <div class="container py-5">
+            <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="sub-style">
+                    <h4 class="sub-title px-3 mb-0">What We Do</h4>
+                </div>
+                <h1 class="display-3 mb-4">Our Service Given Physio Therapy By Expert.</h1>
+                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque
+                    sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam
+                    necessitatibus saepe in ab? Repellat!</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Message Therapy</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Physiotherapy</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Heat & Cold Therapy</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Chiropatic Therapy</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Work Injuries</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Spot Injuries</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-7.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Regular Therapy</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/service-8.jpg" class="img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Back Pain</h5>
+                                <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus, dolor qui ullam</p>
+                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Services More</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Services End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid team py-5">
+        <div class="container py-5">
+            <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h4 class="sub-title px-3 mb-0">Meet our team</h4>
+                </div>
+                <h1 class="display-3 mb-4">Physiotherapy Services from Professional Therapist</h1>
+                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque
+                    sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam
+                    necessitatibus saepe in ab? Repellat!</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item rounded">
+                        <div class="team-img rounded-top h-100">
+                            <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                            <h5>test 1 </h5>
+                            <p class="mb-0">Message Physio Therapist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item rounded">
+                        <div class="team-img rounded-top h-100">
+                            <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                            <h5>test 2</h5>
+                            <p class="mb-0">Rehabilitation Therapist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item rounded">
+                        <div class="team-img rounded-top h-100">
+                            <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                            <h5>Full Name</h5>
+                            <p class="mb-0">Doctor of Physical therapy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item rounded">
+                        <div class="team-img rounded-top h-100">
+                            <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon d-flex justify-content-center">
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                            <h5>Full Name</h5>
+                            <p class="mb-0">Doctor of Physical therapy</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Copyright End -->
+    </div>
+    <!-- Team End -->
+    <!-- About Start -->
+    <div class="container-fluid about  py-5" style="background-color: #003a36;font-family: 'Poppins', sans-serif;">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <h2 class="text-uppercase text-white fw-semibold mb-3" style="letter-spacing: 1px; text-align: center;">
+                    About Us
+                </h2>
+                <!-- Left Image Section -->
+                <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="position-relative overflow-hidden rounded shadow" style="border-radius: 20px;">
+                        <img src="img/about-1.jpg" class="img-fluid w-100 rounded" alt="About Main"
+                            style="object-fit: cover; height: 400px;">
+                        <div class="position-absolute top-0 start-0 translate-middle bg-white shadow rounded-circle p-2"
+                            style="left: 20px; top: 20px; width: 120px; height: 120px;">
+                            <img src="img/about-2.jpg" class="img-fluid rounded-circle" alt="About Inner">
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 bg-dark text-white px-4 py-2 rounded-top-right"
+                            style="font-weight: 600;">
+                            <i class="fas fa-user-clock me-2"></i>15+ Years of Experience
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+                <!-- Right Content Section -->
+                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="section-title text-start mb-4">
 
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-        
-    </body>
+                        <h1 class="display-5 fw-bold mb-4" style="color: #fff;">
+                            Empowering Minds, Transforming Lives
+                        </h1>
+                        <p class="text-secondary fs-5 mb-4" style="   line-height: 1.8; font-family: 'Tinos', serif;">
+                            <strong>Sahatva</strong> is a safe space where people come together to find and offer
+                            support. We work toward breaking the stigma around mental health and creating meaningful
+                            connections through support groups and therapy services.
+                        </p>
+                        <p class="text-secondary fs-6 mb-4" style="font-family: 'Tinos', serif;">
+                            With a compassionate and experienced team, we help individuals navigate life’s challenges,
+                            embrace their emotions, and build resilience. Whether you're seeking clarity, healing, or
+                            just someone to talk to, Sahatva is here for you.
+                        </p>
+                        <a class="custom-btn" href="about.html"> Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Feature Start -->
+    <div class="container-fluid feature py-5">
+        <div class="container py-5">
+            <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h4 class="sub-title px-3 mb-0">Why Choose Us</h4>
+                </div>
+                <h1 class="display-3 mb-4">Why Choose Us? Get Your Life Style Back</h1>
+                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque
+                    sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam
+                    necessitatibus saepe in ab? Repellat!</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-diagnoses fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Licensed Therapist</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-briefcase-medical fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Personalized Treatment</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-hospital-user fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Therapy Goals</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-users fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Practitioners Network</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-spa fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Comfortable Center</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-heart fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Experienced Stuff</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fab fa-pied-piper fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Therapy Goals</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="row-cols-1 feature-item p-4">
+                        <div class="col-12">
+                            <div class="feature-icon mb-4">
+                                <div class="p-3 d-inline-flex bg-white rounded">
+                                    <i class="fas fa-user-md fa-4x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-4">Licensed Therapist</h5>
+                                <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum
+                                    accusamus,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Book Appointment Start -->
+    <!-- <div class="container-fluid appointment py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2">
+                    <div class="section-title text-start">
+                        <h4 class="sub-title pe-3 mb-0">Solutions To Your Pain</h4>
+                        <h1 class="display-4 mb-4">Best Quality Services With Minimal Pain Rate</h1>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
+                            at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
+                            maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="mb-4">
+                                        <h5 class="mb-3"><i class="fa fa-check text-primary me-2"></i> Body Relaxation
+                                        </h5>
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                            deserunt qui cupiditate veritatis enim ducimus.</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <h5 class="mb-3"><i class="fa fa-check text-primary me-2"></i> Body Relaxation
+                                        </h5>
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                            deserunt qui cupiditate veritatis enim ducimus.</p>
+                                    </div>
+                                    <div class="text-start mb-4">
+                                        <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More
+                                            Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="video h-100">
+                                    <img src="img/video-img.jpg" class="img-fluid rounded w-100 h-100"
+                                        style="object-fit: cover;" alt="">
+                                    <button type="button" class="btn btn-play" data-bs-toggle="modal"
+                                        data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
+                                        data-bs-target="#videoModal">
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="appointment-form rounded p-5">
+                        <p class="fs-4 text-uppercase text-primary">Get In Touch</p>
+                        <h1 class="display-5 mb-4 text-white">Get Appointment</h1>
+                        <form>
+                            <div class="row gy-3 gx-4">
+                                <div class="col-xl-6">
+                                    <input type="text"
+                                        class="form-control py-3 border-primary bg-transparent text-white"
+                                        placeholder="First Name">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="email"
+                                        class="form-control py-3 border-primary bg-transparent text-white"
+                                        placeholder="Email">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="phone" class="form-control py-3 border-primary bg-transparent"
+                                        placeholder="Phone">
+                                </div>
+                                <div class="col-xl-6">
+                                    <select class="form-select py-3 border-primary bg-transparent"
+                                        aria-label="Default select example">
+                                        <option selected>Your Gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">FeMale</option>
+                                        <option value="3">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="date" class="form-control py-3 border-primary bg-transparent">
+                                </div>
+                                <div class="col-xl-6">
+                                    <select class="form-select py-3 border-primary bg-transparent"
+                                        aria-label="Default select example">
+                                        <option selected>Department</option>
+                                        <option value="1">Physiotherapy</option>
+                                        <option value="2">Physical Helth</option>
+                                        <option value="2">Treatments</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-primary bg-transparent text-white" name="text"
+                                        id="area-text" cols="30" rows="5" placeholder="Write Comments"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-primary text-white w-100 py-3 px-5">SUBMIT
+                                        NOW</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Modal Video -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                            allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Book Appointment End -->
+
+
+
+
+
+
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid blog py-5">
+        <div class="container py-5">
+            <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h4 class="sub-title px-3 mb-0">Our Blog</h4>
+                </div>
+                <h1 class="display-3 mb-4">Excellent Facility and High Quality Therapy</h1>
+                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque
+                    sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam
+                    necessitatibus saepe in ab? Repellat!</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="blog-item rounded">
+                        <div class="blog-img">
+                            <img src="img/blog-1.jpg" class="img-fluid w-100" alt="Image">
+                        </div>
+                        <div class="blog-centent p-4">
+                            <div class="d-flex justify-content-between mb-4">
+                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045
+                                </p>
+                                <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3
+                                    Comments</a>
+                            </div>
+                            <a href="#" class="h4">Remove back Pain While Working on o physio</a>
+                            <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic
+                                consequatur beatae architecto,</p>
+                            <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="blog-item rounded">
+                        <div class="blog-img">
+                            <img src="img/blog-2.jpg" class="img-fluid w-100" alt="Image">
+                        </div>
+                        <div class="blog-centent p-4">
+                            <div class="d-flex justify-content-between mb-4">
+                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045
+                                </p>
+                                <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3
+                                    Comments</a>
+                            </div>
+                            <a href="#" class="h4">Benefits of a weekly physiotherapy session</a>
+                            <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic
+                                consequatur beatae architecto,</p>
+                            <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="blog-item rounded">
+                        <div class="blog-img">
+                            <img src="img/blog-3.jpg" class="img-fluid w-100" alt="Image">
+                        </div>
+                        <div class="blog-centent p-4">
+                            <div class="d-flex justify-content-between mb-4">
+                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045
+                                </p>
+                                <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3
+                                    Comments</a>
+                            </div>
+                            <a href="#" class="h4">Regular excercise can slow ageing process</a>
+                            <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic
+                                consequatur beatae architecto,</p>
+                            <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Sahatva</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem
+                            dolores laudantium quia, qui similique
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-share fa-2x text-white me-2"></i>
+                            <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Quick Links</h4>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Terapia Services</h4>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Contact Info</h4>
+                        <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site
+                            Name</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
 
 </html>
